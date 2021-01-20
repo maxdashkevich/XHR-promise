@@ -1,6 +1,6 @@
 import XMLHttpRequest from "xmlhttprequest";
 
-function xhrRequest(options) {
+export function xhrRequest(options) {
     const xhrPromise = new Promise((resolve, reject) => {
         if (!options.method || !options.url) {
             reject('Not enough options');
@@ -44,11 +44,3 @@ function xhrRequest(options) {
 
     return xhrPromise;
 }
-
-xhrRequest({
-    method: 'GET',
-    url: 'example.json'
-}).then(result => {
-    const data = JSON.parse(result);
-    console.log(data);
-}).catch(e => console.log('Something went wrong.', e));

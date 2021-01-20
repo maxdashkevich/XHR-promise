@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="module">
+        import {xhrRequest} from './xhr-promise.js'
+        xhrRequest({
+            method: 'GET',
+            url: 'example.json'
+        }).then(result => {
+            const data = JSON.parse(result);
+            console.log(data);
+        }).catch(e => console.log('Something went wrong.', e));
+    </script>
+</body>
+</html>
